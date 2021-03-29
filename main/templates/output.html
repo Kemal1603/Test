@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if data %}
+    <h1><b>Здесь будут отображаться данные последнего запроса, обновите пожалуйста страницу через 30-40 секунд</b></h1>
+    <p>{% for item in data %} </p>
+        <hr>
+        <h2><b>{{ item.domain }}</b></h2>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <a href="{{ item.url }}">{{ item.url }}</a>
+        <hr>
+        <p>{% endfor %}</p>
+{% else %}
+    <p>Ващ запрос принят и уже обрабатывается, попробуйте пожалуйста обновить страницу через 30-40 секунд</p>
+{% endif %}
+</body>
+</html>
